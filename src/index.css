@@ -1,0 +1,377 @@
+@import "tailwindcss";
+
+/* ============================================
+   DRIVEFLEET — DESIGN SYSTEM
+   Premium Car Rental Marketplace
+============================================ */
+
+@theme {
+  --font-display: "DM Sans", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* Brand Colors */
+  --color-brand-50: #fff7ed;
+  --color-brand-100: #ffedd5;
+  --color-brand-200: #fed7aa;
+  --color-brand-300: #fdba74;
+  --color-brand-400: #fb923c;
+  --color-brand-500: #f97316;
+  --color-brand-600: #ea580c;
+  --color-brand-700: #c2410c;
+  --color-brand-800: #9a3412;
+  --color-brand-900: #7c2d12;
+}
+
+/* ============================================
+   DARK THEME (default)
+============================================ */
+:root,
+.dark {
+  --background: #0a0a0f;
+  --background-secondary: #0f0f1a;
+  --card: #13131f;
+  --card-hover: #1a1a2e;
+  --foreground: #f0f0ff;
+  --foreground-muted: #8b8ba8;
+  --border: #1e1e35;
+  --border-subtle: #16162a;
+  --accent: #f97316;
+  --accent-hover: #ea580c;
+  --accent-muted: rgba(249, 115, 22, 0.12);
+  --accent-glow: rgba(249, 115, 22, 0.25);
+  --success: #22c55e;
+  --error: #ef4444;
+  --warning: #eab308;
+  --input-bg: #0f0f1a;
+  --input-border: #2a2a45;
+  --input-focus: #f97316;
+  --overlay: rgba(0, 0, 0, 0.75);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 8px 40px rgba(249, 115, 22, 0.15);
+  --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(249, 115, 22, 0.15), transparent);
+}
+
+/* ============================================
+   LIGHT THEME
+============================================ */
+.light {
+  --background: #fafaf8;
+  --background-secondary: #f4f4f0;
+  --card: #ffffff;
+  --card-hover: #f9f9f6;
+  --foreground: #1a1a1a;
+  --foreground-muted: #6b6b78;
+  --border: #e5e5e0;
+  --border-subtle: #f0f0eb;
+  --accent: #ea580c;
+  --accent-hover: #c2410c;
+  --accent-muted: rgba(234, 88, 12, 0.08);
+  --accent-glow: rgba(234, 88, 12, 0.15);
+  --success: #16a34a;
+  --error: #dc2626;
+  --warning: #ca8a04;
+  --input-bg: #ffffff;
+  --input-border: #d4d4cc;
+  --input-focus: #ea580c;
+  --overlay: rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 8px 32px rgba(234, 88, 12, 0.12);
+  --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(234, 88, 12, 0.08), transparent);
+}
+
+/* ============================================
+   BASE STYLES
+============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================
+   UTILITY CLASSES
+============================================ */
+.bg-background {
+  background-color: var(--background);
+}
+
+.bg-background-secondary {
+  background-color: var(--background-secondary);
+}
+
+.bg-card {
+  background-color: var(--card);
+}
+
+.bg-card-hover {
+  background-color: var(--card-hover);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.bg-accent-muted {
+  background-color: var(--accent-muted);
+}
+
+.bg-input {
+  background-color: var(--input-bg);
+}
+
+.bg-overlay {
+  background-color: var(--overlay);
+}
+
+.text-foreground {
+  color: var(--foreground);
+}
+
+.text-muted {
+  color: var(--foreground-muted);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-success {
+  color: var(--success);
+}
+
+.text-error {
+  color: var(--error);
+}
+
+.border-border {
+  border-color: var(--border);
+}
+
+.border-subtle {
+  border-color: var(--border-subtle);
+}
+
+.border-accent {
+  border-color: var(--accent);
+}
+
+.border-input {
+  border-color: var(--input-border);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+.shadow-hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* ============================================
+   SCROLLBAR STYLING
+============================================ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--foreground-muted);
+}
+
+/* ============================================
+   SELECTION
+============================================ */
+::selection {
+  background-color: var(--accent-muted);
+  color: var(--accent);
+}
+
+/* ============================================
+   FOCUS STYLES
+============================================ */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ============================================
+   CUSTOM COMPONENT CLASSES
+============================================ */
+.df-input {
+  width: 100%;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: var(--foreground);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.df-input::placeholder {
+  color: var(--foreground-muted);
+}
+
+.df-input:focus {
+  outline: none;
+  border-color: var(--input-focus);
+  box-shadow: 0 0 0 3px var(--accent-muted);
+}
+
+.df-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--accent);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: 0.01em;
+  padding: 0.75rem 1.75rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.df-btn-primary:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px var(--accent-glow);
+}
+
+.df-btn-primary:active {
+  transform: translateY(0);
+}
+
+.df-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--foreground-muted);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.df-btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: var(--accent-muted);
+}
+
+.df-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.df-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* Loading skeleton pulse */
+@keyframes skeleton-pulse {
+
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.skeleton {
+  background-color: var(--border);
+  border-radius: 8px;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+/* Badge */
+.df-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.df-badge-available {
+  background-color: rgba(34, 197, 94, 0.12);
+  color: var(--success);
+}
+
+.df-badge-unavailable {
+  background-color: rgba(239, 68, 68, 0.12);
+  color: var(--error);
+}
+
+/* Section heading accent line */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
